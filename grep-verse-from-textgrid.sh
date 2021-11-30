@@ -1,16 +1,27 @@
 TXT_VERSES=$1
 TEXTGRID=$2
 
-cat $TEXTGRID |tr '\n' ' ' |grep -o "words.*phones"|tr -s ' '| sed 's/\"\"/SPACE/g' | tr -d '"' > /tmp/foo
+BOOK="$( echo $TXT_VERSES| sed 's/.txt//'|rev |cut -d'/' -f1|rev )"
+cat $TEXTGRID |tr '\n' ' ' |grep -o "words.*phones"|tr -s ' '| sed 's/\"\"/SPACE/g' | sed -E "s/intervals \[[0-9]+\]: //g" | sed 's/xmin = //g' |sed 's/ xmax = /,/g' |sed 's/ text = /,/g' |tr -d '"' > /tmp/foo
+
+SPACE_REGEX="[0-9]+\.*[0-9]*,[0-9]+\.*[0-9]*,SPACE"
+WORD_REGEX="[0-9]+\.*[0-9]*,[0-9]+\.*[0-9]*"
 
 while read VERSE; do
-    REGEX="""intervals \[[0-9]+\]: xmin = [0-9]+\.*[0-9]* xmax = [0-9]+\.*[0-9]* text = SPACE intervals \[[0-9]+\]: xmin = [0-9]+\.*[0-9]* xmax = [0-9]+\.*[0-9]* text = $(echo $VERSE|sed 's/ / \.\*\? /g') intervals \[[0-9]+\]: xmin = [0-9]+\.*[0-9]* xmax = [0-9]+\.*[0-9]* text = SPACE""";
-    FOUND="$(grep -P -o "$REGEX" /tmp/foo )"
-    VERSE_WORDS=$(echo $VERSE|wc -w)
-    FOUND_LEN=$(echo $FOUND|grep -o " text = "|wc -l)
-    FOUND_SPACES=$(echo $FOUND|grep -o SPACE|wc -l)
-    FOUND_WORDS=$(echo $FOUND_LEN - $FOUND_SPACES | bc)
-    if [ $FOUND_WORDS -eq $VERSE_WORDS ]; then
-	echo "$( echo $FOUND| grep -o -P "intervals .*? SPACE"|head -n1|cut -d' ' -f5 ) $(echo $FOUND|rev| grep -o -P "ECAPS .*? slavretni"|head -n1|rev| cut -d' ' -f8) $VERSE"
+    VERSE_REGEX="($SPACE_REGEX)?"
+    for WORD in $VERSE; do
+	VERSE_REGEX="$VERSE_REGEX ${WORD_REGEX},${WORD}( $SPACE_REGEX)?"
+    done
+    FULL_REGEX=$VERSE_REGEX
+    FOUND="$(grep -P -o "$FULL_REGEX" /tmp/foo )"
+    if [[ ! -z $FOUND ]]; then
+	FIRST=$(echo $FOUND|cut -d',' -f3|cut -d' ' -f1)
+	LAST=$(echo $FOUND|rev|cut -d',' -f1|rev)
+	echo $FIRST $LAST
+	if [[ $FIRST == "SPACE" ]] && [[ $LAST == "SPACE" ]];then
+	    START=$(echo $FOUND|cut -d',' -f1)
+	    END=$(echo $FOUND|rev|cut -d',' -f2|rev)
+	    echo "$BOOK	$START,$END	$VERSE"
+	fi
     fi
 done<$TXT_VERSES

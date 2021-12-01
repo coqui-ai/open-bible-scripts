@@ -17,7 +17,6 @@ while read VERSE; do
     if [[ ! -z $FOUND ]]; then
 	FIRST=$(echo $FOUND|cut -d',' -f3|cut -d' ' -f1)
 	LAST=$(echo $FOUND|rev|cut -d',' -f1|rev)
-	echo $FIRST $LAST
 	if [[ $FIRST == "SPACE" ]] && [[ $LAST == "SPACE" ]];then
 	    START=$(echo $FOUND|cut -d',' -f1)
 	    END=$(echo $FOUND|rev|cut -d',' -f2|rev)

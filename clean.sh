@@ -1,5 +1,9 @@
+#!/bin/bash
+
 INFILE=$1
 LANGUAGE_ISO=$2
+
+# INFILE == a text file from Biblica with "readaloud" in the name
 
 # the punctuation removal was a manual process, not sure if there's a better way
 # I got the list of punctuation by looking at all chars in the texts with:
@@ -12,4 +16,9 @@ LANGUAGE_ISO=$2
 # also removing numbers is not ideal at all. they should be replaced with words
 
 
-cat $INFILE| sed 's/[\-\:\-\—\!﻿\;\‘\’\(\)\?\-\”\“\,\.]/ /g'|tr '[0-9]' ' '|tr -s ' '| awk '$1=$1'|covo validate $LANGUAGE_ISO
+cat $INFILE | \
+    sed 's/[\-\:\-\—\!﻿\;\‘\’\(\)\?\-\”\“\,\.]/ /g' | \
+    tr '[0-9]' ' ' | \
+    tr -s ' ' | \
+    awk '$1=$1' | \
+    covo validate $LANGUAGE_ISO

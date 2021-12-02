@@ -1,3 +1,5 @@
+#!/bin/bash
+
 INPUT=$1
 
 # input is a file of the entire bible, cleaned by the clean.sh script

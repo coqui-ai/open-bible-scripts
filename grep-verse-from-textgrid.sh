@@ -1,3 +1,5 @@
+#!/bin/bash
+
 TXT_VERSES=$1
 TEXTGRID=$2
 

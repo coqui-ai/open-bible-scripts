@@ -16,9 +16,21 @@ LANGUAGE_ISO=$2
 # also removing numbers is not ideal at all. they should be replaced with words
 
 
+
 cat $INFILE | \
-    sed 's/[\-\:\-\—\!﻿\;\‘\’\(\)\?\-\”\“\,\.]/ /g' | \
-    tr '[0-9]' ' ' | \
-    tr -s ' ' | \
-    awk '$1=$1' | \
-    covo validate $LANGUAGE_ISO
+    sed -E 's/[0-9]+\./ /g' | \
+    awk '$1=$1' > /tmp/ORG
+
+cat $INFILE | \
+       sed 's/[\-\:\-\—\!﻿\;\‘\’\(\)\?\-\”\“\,\.]/ /g' | \
+       tr '[0-9]' ' ' | \
+       tr -s ' ' | \
+       awk '$1=$1' | \
+       covo validate $LANGUAGE_ISO > /tmp/CLEAN
+
+FILENAME=$(echo $INFILE | rev |cut -d'/' -f1 |rev)
+if [[ "$(wc -l < /tmp/CLEAN)" -eq "$(wc -l < /tmp/ORG)" ]]; then
+    paste <(cat /tmp/ORG) <(cat /tmp/CLEAN) | sed "s/^/$FILENAME	/g"
+else
+    echo "ERROR: $INFILE"
+fi

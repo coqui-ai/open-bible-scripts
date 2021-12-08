@@ -1,0 +1,14 @@
+akuapem-twi
+arabic
+asante-twi
+chichewa
+ewe
+hausa
+kikuyu
+kurdi-sorani
+lingala
+luganda
+luo
+polish
+vietnamese
+yoruba

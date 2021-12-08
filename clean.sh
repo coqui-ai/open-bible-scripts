@@ -32,5 +32,5 @@ FILENAME=$(echo $INFILE | rev |cut -d'/' -f1 |rev)
 if [[ "$(wc -l < /tmp/CLEAN)" -eq "$(wc -l < /tmp/ORG)" ]]; then
     paste <(cat /tmp/ORG) <(cat /tmp/CLEAN) | sed "s/^/$FILENAME	/g"
 else
-    echo "ERROR: $INFILE"
+    >&2 echo "ERROR: $INFILE"
 fi

@@ -3,10 +3,9 @@
 mkdir hausa
 cd hausa
 ../data/hausa.sh
+
 for i in *.zip; do unzip $i & done
-
-for i in *txt; ../clean.sh $i > $i.clean & done
-
+for i in *txt; do ../clean.sh $i > $i.clean & done
 wc -l *.clean | grep " 0 " | grep -v URL | rev | cut -d' ' -f1 | rev > CLEANING_ERRORS
 echo "I: Could not clean $(wc -l CLEANING_ERRORS) texts"
 echo "I: You can find the exact files listed in CLEANING_ERRORS"

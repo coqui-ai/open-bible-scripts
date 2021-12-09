@@ -21,7 +21,7 @@ cat $INFILE | \
     sed -E 's/[0-9]+\./ /g' | \
     awk '$1=$1' > /tmp/ORG
 
-cat $INFILE | \
+cat $INFILE | dos2unix | \
        sed 's/[\-\:\-\—\!﻿\;\‘\’\(\)\?\-\”\“\,\.]/ /g' | \
        tr '[0-9]' ' ' | \
        tr -s ' ' | \

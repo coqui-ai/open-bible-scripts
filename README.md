@@ -17,8 +17,8 @@ open-bible-scripts$ ./run.sh yoruba yo
 
 ```
 $ docker run -it --mount "type=bind,src=/home/ubuntu/open-bible-scripts,dst=/mnt" mmcauliffe/montreal-forced-aligner
-inside-docker-container$ conda activate aligner
-inside-docker-container$ mfa train --config_path /mnt/MFA_CONFIG /mnt/yoruba/data /mnt/yoruba/dict.txt /mnt/yoruba/data/mfa-output
+(base) root@d8095c794d5f:/# conda activate aligner
+(aligner) root@d8095c794d5f:/# mfa train --config_path /mnt/MFA_CONFIG /mnt/yoruba/data /mnt/yoruba/dict.txt /mnt/yoruba/data/mfa-output
 ```
 
 5. use `grep-verse-from-textgrid.sh` to get best alignments (i.e. with silence on both sides)

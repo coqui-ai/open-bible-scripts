@@ -8,6 +8,8 @@ $ git clone https://github.com/coqui-ai/open-bible-scripts.git
 
 ### Run the main script `run.sh`
 
+Use the language name as used in the text files in `open-bible-scripts/data/`, and use the language code as expected by [covo](https://www.github.com/ftyers/commonvoice-utils). For Yoruba use `yoruba` and `yo`, for Ewe use `ewe` and `ee`, and so on.
+
 ```
 $ cd open-bible-scripts
 open-bible-scripts$ ./run.sh yoruba yo

@@ -1,19 +1,19 @@
-# Align open.bible data with the montreal-forced-aligner
+# Align [`Open.Bible`](https://open.bible/) data
 
-0. clone this repo
+### Clone this repo
 
 ```
 $ git clone https://github.com/coqui-ai/open-bible-scripts.git
 ```
 
-1. run the main script `run.sh`
+### Run the main script `run.sh`
 
 ```
 $ cd open-bible-scripts
 open-bible-scripts$ ./run.sh yoruba yo
 ```
 
-4. generate alignments with [`mfa train`](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/workflows/train_acoustic_model.html)
+### Generate alignments with [`mfa train`](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/workflows/train_acoustic_model.html)
 
 ```
 $ docker run -it --mount "type=bind,src=/home/ubuntu/open-bible-scripts,dst=/mnt" mmcauliffe/montreal-forced-aligner
@@ -34,5 +34,14 @@ INFO - Initialization complete!
 
 ```
 
-5. use `grep-verse-from-textgrid.sh` to get best alignments (i.e. with silence on both sides)
-6. use `split-audio.sh` to cut audio into verse-sized chunks
+### Extract best alignments (with silence on both sides)
+
+```
+./grep-verse-from-textgrid.sh
+```
+
+### Split verses into chunks
+
+```
+./split-audio.sh
+```

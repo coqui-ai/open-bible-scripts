@@ -20,7 +20,7 @@ open-bible-scripts$ ./run.sh yoruba yo
 ```
 $ docker run -it --mount "type=bind,src=/home/ubuntu/open-bible-scripts,dst=/mnt" mmcauliffe/montreal-forced-aligner
 (base) root@d8095c794d5f:/# conda activate aligner
-(aligner) root@d8095c794d5f:/# mfa train -j `nproc` --clean --config_path /mnt/MFA_CONFIG /mnt/yoruba/data /mnt/yoruba/dict.txt /mnt/yoruba/data/mfa-output
+(aligner) root@d8095c794d5f:/# mfa train --clean --num_jobs `nproc` --temp_directory /mnt/yoruba/data/mfa-tmp-dir --config_path /mnt/MFA_CONFIG /mnt/yoruba/data /mnt/yoruba/dict.txt /mnt/yoruba/data/mfa-output
 INFO - Setting up corpus information...
 INFO - Number of speakers in corpus: 1189, average number of utterances per speaker: 1.0
 INFO - Setting up training data...

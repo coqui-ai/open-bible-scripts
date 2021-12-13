@@ -6,7 +6,7 @@
 mkdir data
 
 parallelize-text() {
-    i=$( echo $1 | sed -E 's/^0+//g');
+    i=$( echo $1 | sed -E 's/_0+/_/g'| sed -E 's/^0+//g');
     AUTHOR=$(echo $i | cut -d'_' -f3);
     PART=$(echo $i | cut -d'_' -f4);
     mkdir -p data/${AUTHOR}_${PART};
@@ -14,7 +14,7 @@ parallelize-text() {
 }
 
 parallelize-audio() {
-    i=$( echo $1 | sed -E 's/^0+//g');
+    i=$( echo $1 | sed -E 's/_0+/_/g'| sed -E 's/^0+//g');
     AUTHOR=$(echo $i | cut -d'/' -f2 | cut -d'_' -f1);
     PART=$(echo $i | cut -d'/' -f2 | cut -d'_' -f2 | sed 's/.wav//g');
     mv $i data/${AUTHOR}_${PART}/${AUTHOR}_${PART}.wav;

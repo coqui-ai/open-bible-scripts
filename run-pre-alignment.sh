@@ -17,6 +17,8 @@ echo "I: You can find the exact files listed in CLEANING_ERRORS"
 
 parallel --eta -a CLEANING_ERRORS "rm {}"
 
+../extra-preprocess/$LANGUAGE_NAME.sh
+
 ../parallelize.sh
 
 cat */*/*.txt > /tmp/ALL_CLEAN_TEXT

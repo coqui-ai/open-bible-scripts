@@ -6,13 +6,16 @@
 $ git clone https://github.com/coqui-ai/open-bible-scripts.git
 ```
 
-### Run the main script `run.sh`
+### Start with the run script for pre-processing
 
-Use the language name as used in the text files in `open-bible-scripts/data/`, and use the language code as expected by [covo](https://www.github.com/ftyers/commonvoice-utils). For Yoruba use `yoruba` and `yo`, for Ewe use `ewe` and `ee`, and so on.
+
+Use the language name as defined in `open-bible-scripts/data/*.txt`. Use the language code as expected by [covo](https://www.github.com/ftyers/commonvoice-utils).
+
+E.g., for Yoruba use `yoruba` and `yo`, for Ewe use `ewe` and `ee`, for Luganda `luganda` and `lg`, and so on.
 
 ```
 $ cd open-bible-scripts
-open-bible-scripts$ ./run.sh yoruba yo
+open-bible-scripts$ ./run-pre-alignment.sh yoruba yo
 ```
 
 ### Generate alignments with [`mfa train`](https://montreal-forced-aligner.readthedocs.io/en/latest/user_guide/workflows/train_acoustic_model.html)
@@ -36,14 +39,13 @@ INFO - Initialization complete!
 
 ```
 
-### Extract best alignments (with silence on both sides)
+### Finish with the run script for post-processing
+
+Use the language name as defined in `open-bible-scripts/data/*.txt`.
+
+E.g., for Yoruba use `yoruba`, for Ewe use `ewe`, for Luganda `luganda`, and so on.
 
 ```
-./grep-verse-from-textgrid.sh
-```
-
-### Split verses into chunks
-
-```
-./split-audio.sh
+$ cd open-bible-scripts
+open-bible-scripts$ ./run-post-alignment.sh yoruba yo
 ```

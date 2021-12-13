@@ -26,5 +26,5 @@ cat */*/*.txt > /tmp/ALL_CLEAN_TEXT
 echo "I: Done formatting data for the $LANGAUGE_NAME language, now use MFA to align"
 echo "I:"
 echo 'I:  $ docker run -it --mount "type=bind,src=/home/ubuntu/open-bible-scripts,dst=/mnt" mmcauliffe/montreal-forced-aligner'
-echo "I: (base) root@d8095c794d5f:/# conda activate aligner"
-echo "I: (aligner) root@d8095c794d5f:/# mfa train -j `nproc` --clean --config_path /mnt/MFA_CONFIG /mnt/${LANGUAGE_NAME}/data /mnt/${LANGUAGE_NAME}/dict.txt /mnt/${LANGUAGE_NAME}/data/mfa-output"
+echo "I: (base) :/# conda activate aligner"
+echo "I: (aligner) :/# mfa train --clean --num_jobs `nproc` --temp_directory /mnt/$LANGUAGE_NAME/data/mfa-tmp-dir --config_path /mnt/MFA_CONFIG /mnt/$LANGUAGE_NAME/data /mnt/$LANGUAGE_NAME/dict.txt /mnt/$LANGUAGE_NAME/data/mfa-output &> /mnt/$LANGUAGE_NAME/data/LOG &"

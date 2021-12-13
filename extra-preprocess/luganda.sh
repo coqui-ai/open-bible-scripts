@@ -69,3 +69,4 @@ mv 64_3JN	3JN;	rename 's/64_3\ John/3JN/' 3JN/*.wav;
 mv 65_JUD	JUD;	rename 's/65_Jude/JUD/' JUD/*.wav;
 mv 66_REV	REV;	rename 's/66_Revelation/REV/' REV/*.wav;
 rename 's/ /_/' */*.wav;
+rename 's/_V[0-9]//' */*.wav;

@@ -14,7 +14,7 @@ if __name__ == '__main__':
     parser.add_argument("-wav_folder", "--path_to_wavs", default="data/lnOMNB20_MAT_wav/")
     parser.add_argument("-timing_folder", "--path_to_timings", default="data/lnOMNB20_timingfiles/timingfiles/MAT/")
     parser.add_argument("-book_sfm", "--path_to_book_sfm", default="data/lnOMNB20_USFM/41MATlnOMNB20.SFM")
-    parser.add_argument("-o", "--output", default="data/MAT/")
+    parser.add_argument("-output", "--output", default="data/MAT/")
 
     args = parser.parse_args()
     
@@ -102,7 +102,7 @@ if __name__ == '__main__':
                 text_file.write(dict_chap_verse[str(int(chap))][int(verse_key.split('_')[1])-1])
                 text_file.write("\n")  
                       
-        continue
+        # continue
     
     
     

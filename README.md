@@ -1,5 +1,22 @@
 # Align [`Open.Bible`](https://open.bible/) data
 
+|Language|Passing|Failing|Unknown|
+|---------|------|-------|-------|
+|Yoruba|💚|||
+|Ewe|💚|||
+|Chichewa|💚|||
+|Hausa||💔||
+|Luo||💔||
+|Luganda||💔||
+|Kikuyu||💔||
+|Lingala|||❓|
+|Asante Twi|||❓|
+|Akuapem Twi|||❓|
+|Arabic|||❓|
+|Kurdi Sorani|||❓|
+|Polish|||❓|
+|Vietnamese|||❓|
+
 ### Clone this repo
 
 ```

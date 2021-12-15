@@ -6,6 +6,10 @@
 $ git clone https://github.com/coqui-ai/open-bible-scripts.git
 ```
 
+## Alignment Approach 1: Use the Montreal Forced Aligner
+
+Use MFA to align and train a new acoustic model from stratch
+
 ### Start with the run script for pre-processing
 
 
@@ -40,6 +44,10 @@ E.g., for Yoruba use `yoruba`, for Ewe use `ewe`, for Luganda `luganda`, and so 
 $ cd open-bible-scripts
 open-bible-scripts$ ./run-post-alignment.sh yoruba yo
 ```
+
+
+## Alignment Approach 2: Use timing files from Biblica
+
 
 ### Split using timming file 
 

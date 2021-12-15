@@ -25,7 +25,14 @@ $ git clone https://github.com/coqui-ai/open-bible-scripts.git
 
 ## Alignment Approach 1: Use the Montreal Forced Aligner
 
-Use MFA to align and train a new acoustic model from stratch
+The first alignment approach is to use MFA to align and train a new acoustic model from stratch.
+
+### Dependencies
+
+You need to install a couple things on your own:
+
+[`gnu-parallel`](https://www.gnu.org/software/parallel/)
+[`covo`](https://www.github.com/ftyers/commonvoice-utils)
 
 ### Start with the run script for pre-processing
 

@@ -40,3 +40,18 @@ E.g., for Yoruba use `yoruba`, for Ewe use `ewe`, for Luganda `luganda`, and so 
 $ cd open-bible-scripts
 open-bible-scripts$ ./run-post-alignment.sh yoruba yo
 ```
+
+### Split using timming file 
+
+Install sox on your OS. See linux installation below
+```bash
+sudo apt-get install sox
+sudo apt-get install libsox-fmt-mp3
+sox --version
+```
+
+Run the following command from the root
+
+```python
+python split_verse.py -wav_folder data/lnOMNB20_MAT_wav/ -timing_folder data/lnOMNB20_timingfiles/timingfiles/MAT/ -book_sfm  data/lnOMNB20_USFM/41MATlnOMNB20.SFM -output /data/MAT/
+```

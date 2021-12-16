@@ -1,10 +1,10 @@
 # Align [`Open.Bible`](https://open.bible/) data
 
-|Language|Passing|Failing|Unknown|Notes|
-|---------|------|-------|-------|----|
+|Language|Passing|Failing|Unknown|Notes|Aligned audio| 
+|---------|------|-------|-------|----|-------|
 |Yoruba|💚||||
 |Ewe|💚||||
-|Lingala|💚||||
+|Lingala|💚||||[Link](https://coqui-ai-public-data.s3.amazonaws.com/lingala-coqui-psalm119-dec16.tar.gz)|
 |Chichewa|❤️‍🩹|||Passing with bad alignments|
 |Hausa||💔|||
 |Luo||💔|||

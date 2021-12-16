@@ -10,8 +10,8 @@
 |Luo||💔||
 |Luganda||💔||
 |Kikuyu||💔||
-|Asante Twi|||❓|
-|Akuapem Twi|||❓|
+|Asante Twi||💔||
+|Akuapem Twi||💔||
 |Arabic|||❓|
 |Kurdi Sorani|||❓|
 |Polish|||❓|

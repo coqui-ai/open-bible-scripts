@@ -5,11 +5,11 @@
 |Yoruba|💚|||
 |Ewe|💚|||
 |Chichewa|💚|||
+|Lingala|💚|||
 |Hausa||💔||
 |Luo||💔||
 |Luganda||💔||
 |Kikuyu||💔||
-|Lingala|||❓|
 |Asante Twi|||❓|
 |Akuapem Twi|||❓|
 |Arabic|||❓|

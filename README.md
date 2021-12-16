@@ -3,7 +3,7 @@
 |Language|Passing|Failing|Unknown|Notes|Aligned audio| 
 |---------|------|-------|-------|----|-------|
 |Yoruba|💚||||[33 hours of Yoruba, after throwing out outliers](https://coqui-ai-public-data.s3.amazonaws.com/yoruba-coqui-alignments-dec10.tar.gz)|
-|Ewe|💚||||[All Ewe alignment](https://coqui-ai-public-data.s3.amazonaws.com/ewe-coqui-alignments-dec11.tar.gz),[Ewe alignments for Psalm 119](https://coqui-ai-public-data.s3.amazonaws.com/ewe-psalm119-coqui-dec11.tar.gz)|
+|Ewe|💚||||[All Ewe alignment](https://coqui-ai-public-data.s3.amazonaws.com/ewe-coqui-alignments-dec11.tar.gz), [Ewe alignments for Psalm 119](https://coqui-ai-public-data.s3.amazonaws.com/ewe-psalm119-coqui-dec11.tar.gz)|
 |Lingala|💚||||[Link](https://coqui-ai-public-data.s3.amazonaws.com/lingala-coqui-psalm119-dec16.tar.gz)|
 |Chichewa|❤️‍🩹|||Passing with bad alignments|
 |Hausa||💔|||

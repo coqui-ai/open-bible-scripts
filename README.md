@@ -72,18 +72,23 @@ open-bible-scripts$ ./run-post-alignment.sh yoruba yo
 
 ## Alignment Approach 2: Use timing files from Biblica
 
+This works for only Lingala, Akuapem Twi, and Asante Twi.
 
-### Split using timming file 
+### Split using timing file 
 
 Install sox on your OS. See linux installation below
 ```bash
 sudo apt-get install sox
 sudo apt-get install libsox-fmt-mp3
 sox --version
+python3 -m venv venv
+source venv/bin/activate
+pip install -U pip
+pip install pandas
 ```
 
-Run the following command from the root
+Execute the `run-biblica-splits-*.sh` script from the root dir, for example with Lingala:
 
-```python
-python split_verse.py -wav_folder data/lnOMNB20_MAT_wav/ -timing_folder data/lnOMNB20_timingfiles/timingfiles/MAT/ -book_sfm  data/lnOMNB20_USFM/41MATlnOMNB20.SFM -output /data/MAT/
+```bash
+./run-biblica-splits-lingala.sh
 ```

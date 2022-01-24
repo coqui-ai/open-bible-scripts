@@ -1,6 +1,6 @@
 #!/bin/bash
 
-LANGUAGE_NAME=$1
+LANGUAGE_NAME="lingala"
 mkdir $LANGUAGE_NAME
 cd $LANGUAGE_NAME
 

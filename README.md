@@ -5,13 +5,13 @@
 |Yoruba|💚||||[Psalm 119](https://coqui-ai-public-data.s3.amazonaws.com/psalm-119-yoruba.tar.gz)|
 |Ewe|💚||||[Psalm 119](https://coqui-ai-public-data.s3.amazonaws.com/ewe-psalm119-coqui-dec11.tar.gz)|
 |Lingala|💚||||[Psalm 119](https://coqui-ai-public-data.s3.amazonaws.com/lingala-coqui-psalm119-dec16.tar.gz)|
+|Asante Twi|💚|||||
+|Akuapem Twi|💚|||||
 |Chichewa|❤️‍🩹|||Passing with bad alignments|[Psalm 119](https://coqui-ai-public-data.s3.amazonaws.com/chichewa-coqui-PSA_119.tar.gz)|
 |Hausa||💔||||
 |Luo||💔||||
 |Luganda||💔||||
 |Kikuyu||💔||||
-|Asante Twi||💔||||
-|Akuapem Twi||💔||||
 |Arabic|||❓|||
 |Kurdi Sorani|||❓|||
 |Polish|||❓|||
